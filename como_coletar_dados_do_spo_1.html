@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Luis Vinicius</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+	<script defer src="../assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+
+
+    
+    <header class="header text-center">	    
+	  
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+      <script id="dsq-count-scr" src="//luisvinicius-me.disqus.com/count.js" async></script>
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" style="position:relative; left:10px; top:-25px; width:100; height:50; z-index:1; overflow: hidden" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpeg" alt="image" >			
+					
+					  <div class="bio mb-3">Hello World! Me chamo Luis Vinicius, atualmente graduando em Gestão da Informação na UFPE, sou Cientista de Dados e um programador apaixonado por Python<br><a href="about.html">Mais sobre mim</a></div>
+					  <ul class="social-list list-inline py-3 mx-auto">
+			            
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-github fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			      </ul><!--//social-list-->
+			      <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Home<span class="sr-only">(current)</span></a>
+					</li>
+
+					<li class="nav-item active">
+					    <a class="nav-link" href="../blog-list.html"><i class="fas fa-podcast fa-fw mr-2"></i>Blog</a>
+					</li>
+
+					<li class="nav-item">
+					    <a class="nav-link" href="../palestras.html"><i class="fas fa-file-powerpoint fa-fw mr-2"></i>Palestras</a>
+					</li>
+
+					<li class="nav-item">
+					    <a class="nav-link" href="../projetos.html"><i class="fas fa-file fa-fw mr-2"></i>Projetos</a>
+					</li>
+
+					<li class="nav-item">
+					    <a class="nav-link" href="../about.html"><i class="fas fa-user fa-fw mr-2"></i>Sobre</a>
+					</li>
+
+				</ul>
+				
+				
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">Spotify & Python & Data Science - Como Coletar os Dados do Spotify com Python</h2>
+				    <div class="meta mb-3"><span class="date">Publicado em 06 de Novembro de 2020</span></div>
+			    </header>
+			    
+			    <!-- Capa da publicacao-->
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <img class="img-fluid" src="../assets/images/coleta_de_dados_post1.jpg" alt="image"></a>
+				        
+				    </figure>
+
+			
+				    <!--Inicio da publicacao-->
+				    <h3 class="mt-5 mb-3">Coleta de Dados</h3>
+
+				    <p>A coleta de dados é a primeira etapa de todo projeto de Data Science, caso seja optado por não coletar um conjunto de dados já pronto, devemos procurar fontes de dados que possam ser uteis para construir nossa base de dados e das fontes extrair os dados.</p>
+
+				    <p>Uma das formas mais famosas de coletar dados já prontos para realizar projetos é buscando em fontes confiaveis como kaggle ou portais governamentais, entretanto, o que queremos são dados que dificilmente encontrariamos na internet, além de se tratar de dados de um artista especifico, ainda assim é um artista que não possui grande popularidade.</p>
+
+				    <p>A primeira alternativa de coletarmos os dados seria fazendo o uso de web scraping, web scraping como o proprio nome já diz é a coleta de dados da web, ou raspagem web, sendo uma forma de mineração que permite a extração de dados de sites da web, convertendo-os em informação estruturada para posterior análise. Porém, com meu pouco conhecimento em web scraping, não sei se seria possivel coletar os dados do site do Spotify dessa forma.</p>
+
+				    <p>Por outro lado, temos uma seguda e mais viavel alternativa, apesar de não ser tão conhecida, o Spotify possui uma API onde podemos coletar e usar os dados de todos os artistas cadastrados no spotify ou até mesmo do próprio usuário. Porém, para coletar os dados fornecidos pela API do Spotify é necessário primeiro ter o acesso a API e depois se conectar com API e coletar os dados fornecidos. Logo, para ter acesso a API do Spotify precisamos criar uma aplicação web na <a href ="https://developer.spotify.com/dashboard/login">Plataforma de desenvolvedores do Spotify</a> e resgatar o Client_Id e Client_Secret, feito isso, utilizaremos a biblioteca SpotiPy do Python para se conectar com a API e conseguir, finalmente, coletar os dados do Spotify.</p>
+                    
+                    <!--Video explicativo-->
+                    <div class="embed-responsive embed-responsive-16by9">
+				      <iframe width="560" height="315" src="https://www.youtube.com/embed/r0O4Sr6HM-0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				    </div>
+
+				    <br>
+
+				    <p>A biblioteca SpotiPy tem o objetivo de que o usuário tenha acesso total a todos os dados musicais fornecidos pela plataforma Spotify. Com a biblioteca SpotiPy é possivel coletar as mais diversas informações de um artista do Spotify, seja informações das músicas do artista, dos álbuns ou até mesmo informações de catálogo do Spotify sobre artistas semelhantes ao artista identificado. Atráves da documentação da biblioteca você pode encontrar outras informações que podem ser possiveis de coletar do spotify e começar a aplicar na prática <a href="https://spotipy.readthedocs.io/en/2.12.0/">(Documentação)</a>.</p>
+
+				    <p style = "size:75px;">Agradecimento especial a Dandara Sousa, as dicas passadas através do Linkedin e seu projeto de análise de dados e forró foram muito uteis para a construção do meu projeto e desse artigo.</p>
+
+
+				   
+				    
+				    
+				    <h3 class="mt-5 mb-3">Criando conexão com a API através do SpotiPy</h3>
+				    
+				    <a href ="https://colab.research.google.com/github/luislauriano/Data_Science/blob/master/Analise_de_dados_dos_Albuns_NexoAnexo.ipynb#scrollTo=VZXPZ7YvYYjw"> Notebook disponivel para um melhor entendimento</a>
+					
+					<br>
+					<br>
+
+					<p>A primeira coisa a se fazer é instalar corretamente a biblioteca SpotiPy que será utilizada para se conectar com a API e coletar os dados do Spotify fornecidos.</p>
+					<br>
+					<code>
+					    	!pip install Spotipy
+					</code>
+
+
+					<br>
+                    <br>
+
+                    
+                    <p>Após isso, já podemos importar as bibliotecas que serão necessárias para coletar os dados, Spotipy e a biblioteca csv para ao final transformar os dados coletados em um arquivo csv.</p>
+					<br>
+					<code> 
+					    	import spotipy
+                           
+					</code>
+					<br>
+					<code>
+						import csv
+					</code>
+
+					<br>
+					<br>
+                    
+
+                    <p>Chegou agora de nos conectarmos com a API, para isso, importaremos o pacote de credenciais e passaremos as credenciais da aplicação web que foi criada na plataforma de desenvolvedores do Spotify, sendo o Client Id e Client Secret. A variável spot é o que nos conecta com API e permite coletarmos os dados do Spotify, então será muito útil.</p>
+                    <br>
+					<code> 
+					    	
+                            from spotipy.oauth2 import SpotifyClientCredentials
+
+					</code>
+					<br>
+					<br>
+					<code>
+						spot = spotipy.Spotify(client_credentials_manager = SpotifyClientCredentials(client_id="dcffc14978ed497aa58834a7864a99b7", client_secret="e8c5cc78c8e74ccd92323d146c635b47"))
+					</code>
+
+
+
+
+					
+                    <h3 class="mt-5 mb-3">Coletando os dados do Spotify fornecidos pela API com SpotiPy</h3>
+
+                    <p>Para coletar os dados serão criadas funções que ao final serão chamadas ao escolhermos de qual artista queremos coletar os dados.<p>
+
+                    <p>Logo, a primeira função será uma função que seja responsável por recuperar os dados do artista a partir do seu Nome. O que a função irá fazer é através do método search buscar o nome do artista e a partir disso buscar suas músicas (tracks).</p>
+
+                 
+
+                    <pre>
+
+                      <code>
+                           def get_artista_por_nome(name):
+                                  busca = spot.search(name)
+                                  items = busca['tracks']['items']
+                                  if len(items) > 0:
+                                       return items[0]['artists'][0]
+                                  else:
+                                       return None
+
+                      </code>
+                    </pre>
+
+
+                    <p>A partir do artista determinado na função anterior, é preciso criar uma função que recupere o ID do artista, para casos de artista com o mesmo nome, então o ID é algo único do artista cadastro no Spotify e assim não coletaremos os dados de um outro artista</p>
+                    <br>
+
+                    <pre>
+
+                      <code>
+                           def get_id_do_artista(artist):
+                                return artist['id']
+
+                      </code>
+                    </pre>
+
+
+                    <p>Com o ID do artista em mãos as coisa ficam mais fáceis e podemos recuperar os nomes de músicas e álbuns que pertencem a ele no Spotify.</p>
+
+                    <p>O próximo passo é utilizar o ID do artista para construir uma função que retorne tanto os dados do artista, como os álbuns que pertencem a ele no Spotify, ou seja, os dados coletados serão os das músicas que pertencem aos álbuns do artista.Neste caso, repare que no método Limit, eu determinei um limite de 3 álbuns, porém a quantidade pode ser maior de acordo com o número de álbuns que o artista possui no spotify<p>
+
+                    <pre>
+
+                      <code>
+                           def get_dados_do_artista(id):
+
+                             albuns_do_artista = spot.artist_albums(id, country = 'BR', limit=3)
+                             albuns = {}
+
+                             for i in range(len(albuns_do_artista['items'])):
+                                 id = albuns_do_artista['items'][i]['id']
+                                 name = albuns_do_artista['items'][i]['name']
+                                 albuns[id] = name
+
+                             return albuns
+
+                       </code>
+                    </pre>
+
+                    <p> Após retornar os álbuns que pertencem ao Artista, ainda é preciso realizar o mais importante, coletar os dados as músicas que fazem parte dos álbuns e os seus dados<p>
+
+                    <pre>
+
+                      <code>
+                           def get_dados_dos_albuns(album_id, album_name):
+                                spotify_album = {}
+
+                                #Recuperar as músicas dos álbuns
+                                tracks = spot.album_tracks(album_id)
+
+                                for n in range(len(tracks['items'])):
+                                    id_track = tracks['items'][n]['id']
+                                    track = spot.track(id_track)
+                                    spotify_album[id_track] = {}
+
+                                #As variaveis (dados) que estou querendo coletar das músicas
+                                spotify_album[id_track]['album'] = album_name 
+                                spotify_album[id_track]['track_number'] = track['track_number'] 
+                                spotify_album[id_track]['name'] = track['name'] 
+                                spotify_album[id_track]['popularity'] = track['popularity'] 
+
+                                return spotify_album
+                       </code>
+                    </pre>
+
+                    <p>Observe que determinei quais os dados que eu queria coletar das músicas, sendo eles: Nome do álbum que a música pertence, posição da música no álbum, nome da música e a escala da sua popularidade. O código irá retornar um dicionário com as músicas e os seus dados.<p>
+
+                    <p>Por último, porém não menos importante, precisamos construir uma função que aplique a coleta dos dados á todos os álbuns do artista que solicitamos recuperar.</p>
+
+                    <pre>
+
+                      <code>
+                           def get_dados_de_todos_albuns(albums_ids_names):
+
+                               spotify_albums = []
+                               albums_names = []
+
+                               for id, name in albums_ids_names.items():
+                                   if name not in albums_names:
+                                      albums_names.append(name)
+                                      dados_dos_albuns = get_dados_dos_albuns(id,name) 
+                                      for item in dados_dos_albuns.items():
+                                      spotify_albums.append(item[1]) 
+                               return spotify_albums
+                       </code>
+                    </pre>
+
+                    <p>Para finalizar, será utilizada a biblioteca csv, para que possamos transformar todos os dados coletados dos álbuns em um arquivo CSV.</p>
+
+                    <pre>
+
+                      <code>
+                           def convert_to_csv(filepath, name):
+
+                               keys = filepath[0].keys()
+                               print(keys)
+                               csv_name = ''+ name + '.csv'
+                               
+                               with open(csv_name, 'w') as output_file:
+                                   dict_writer = csv.DictWriter(output_file, keys)
+                                   dict_writer.writeheader()
+                                   dict_writer.writerows(filepath)
+                               return
+                       </code>
+                    </pre>
+
+                    <p>Após construir a função para converter os dados das músicas dos álbuns coletados em um arquivo CSV, só falta escolher qual será o artista que iremos coletar os dados.</p>
+
+                    <pre>
+
+                      <code>
+                      	   #Nome do artista que devemos coletar os dados
+                           name = "NexoAnexo"
+
+                           artista = get_artista_por_nome(name)    
+
+                           #Se encontrar o artista no spotify:
+                           if artista:
+                               id_do_artista = get_id_do_artista(artista)
+                               dados_do_artista = get_dados_do_artista(id_do_artista)
+                               dados_dos_albuns = get_dados_de_todos_albuns(dados_do_artista)
+                               convert_to_csv(dados_dos_albuns, 'NexoAnexo')   
+
+                          else:
+                               logger.error("Can't find artist: %s", artista)
+                      </code>
+                    </pre>
+
+                    <p>Neste caso, eu coletei os dados do artista NexoAnexo, seguindo o que eu fiz em meu projeto completo, onde eu coletei e analisei os dados dos álbuns do artista. (Projeto Completo) -> <a href "https://github.com/luislauriano/Data_Science/blob/master/Analise_de_dados_dos_Albuns_NexoAnexo.ipynb">Spotify & Python & Data Science - Análise de Dados dos Álbuns do artista NexoAnexo</a>
+
+
+				    <!--Fim da publicacao-->
+				    <h3 class="mt-5 mb-3">Conclusão</h3>
+				    <p>Chegamos ao fim... Agora é hora de você se divertir e poder trabalhar com esse conjunto de dados que acabou de ser coletado, seja construindo uma análise de dados ou até mesmo gráficos no Power Bi.</p>
+
+
+				    <!--Referências-->
+				    <h3 class="mt-5 mb-3">Referências</h3>
+				    <a href="https://dandaramcsousa.github.io/2020/05/20/tutorial-api-spotify.html">Acessando a API do Spotify - Dandara Sousa</a>
+
+            
+            <!--Final-->
+            <br>
+            <br>
+            <img class="img-fluid" src="../assets/images/conclusao.jpg" alt="image">
+            <br>
+            <br>
+            <h6 style='color#8c1f6a'><a href = "https://www.linkedin.com/in/luislauriano/">Linkedin</a> | <a href = "https://github.com/luislauriano"> GitHub</a> | <a href = "https://github.com/luislauriano/Data_Science">Repositório de Data Science</a></h6>
+            
+                   
+				    
+				   
+			    </div>
+				    
+
+			    <nav class="blog-nav nav nav-justified my-5">
+				    <a class="nav-link-prev nav-item nav-link rounded-left" href="../blog-list.html">Voltar para o Blog<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				    <a class="nav-link-next nav-item nav-link rounded-right" href="../posts/manopla1.html">A manopla do Cientista de Dados<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				 </nav>
+
+          <!--INICIO DA SECAO COMENTARIOS-->
+         <div class="blog-comments-section">
+           <div id="disqus_thread"></div>
+           <script>
+                   
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://luisvinicius-me.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div><!--//blog-comments-section-->
+        <!--FIM DA SECAO COMENTARIOS-->
+				
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+
+	    
+
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers and adapted by <a href="http://linkedin.com/in/luislauriano" target="_blank">Luis Vinicius</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+
+
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
