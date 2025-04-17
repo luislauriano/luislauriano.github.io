@@ -1,0 +1,366 @@
+---
+interface Publication {
+  title: string;
+  conference: string;
+}
+
+interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+}
+
+interface Talk {
+  title: string;
+  event: string;
+  date: string;
+}
+
+interface Achievement {
+  title: string;
+  description: string;
+  year: string;
+}
+
+const publications: Publication[] = [
+  {
+    title: "An innovative model to mitigate the impact of oil and steel price dynamics on oil & gas sector projects",
+    conference: "21st Brazilian Meeting on Artificial Intelligence and Computational Intelligence (ENIAC 2024), Belém/PA"
+  }
+];
+
+const experiences: Experience[] = [
+  {
+    company: "Fundação 1Bi",
+    role: "Data Engineer",
+    period: "Feb 2023 - Present",
+    description: "Responsible for building and modernizing data architecture and pipelines for Fundação 1Bi's products, focusing on data solutions for educational platforms. Using tools like Airflow, DBT, Metabase, Airbyte, AWS (Athena, S3, Glue, RDS, DynamoDB) to compose a modern data stack architecture."
+  },
+  {
+    company: "Data Rudder",
+    role: "Junior Data Scientist",
+    period: "Aug 2021 - Jan 2023",
+    description: "Worked on supervised and unsupervised machine learning projects for clients in retail, finance, credit, health, and fraud sectors. Built predictive models (churn, risk scoring, fraud, real estate pricing) and results presentation dashboards."
+  },
+  {
+    company: "Federal University of Pernambuco",
+    role: "PIBIC Researcher",
+    period: "Sep 2020 - Oct 2021",
+    description: "Research on project management practices in information consulting companies, evaluating management maturity based on the PMMM model."
+  },
+  {
+    company: "UFPE",
+    role: "Academic Monitor",
+    description: "Programming and Operating Systems (May - Aug 2021). Usability and Information Architecture (Feb - May 2022). Supported professors in didactic activities and evaluations."
+  },
+  {
+    company: "National Treasury Attorney General's Office",
+    role: "IT Intern (Programmer)",
+    period: "Sep 2020 - Aug 2021",
+    description: "Automation of repetitive processes and development of internal systems using Python and JavaScript. Creation of PRFN5's institutional website."
+  }
+];
+
+const talks: Talk[] = [
+
+  {
+    title: "Data Balancing with Python to Mitigate Sampling and Algorithmic Bias",
+    event: "Python Nordeste 2024",
+  },
+  {
+    title: "Building a Machine Learning Model to Predict Possible World Cup 2022 Outcomes",
+    event: "AfroPython 2023 | TDC Connections 2023 | GitHub Global Latinx Tech Conference 2022",
+  },
+  {
+    title: "The First Three Months of 2020 – Python Analysis of the Initial Impact of COVID-19",
+    event: "Python Nordeste 2022",
+  },
+  {
+    title: "What Happens When You Combine Spotify, Python, and Data Science",
+    event: "Python Brasil 2020",
+  }
+];
+
+const achievements: Achievement[] = [
+
+  {
+    title: "2nd Place - Hacker Cidadão Hackathon",
+    description: "Winner (2nd place) with the project Copiba, organized by Emprel and Recife City Hall",
+    year: "2025"
+  },
+  {
+    title: "1st Place - Hello Future Hackathon",
+    description: "International hackathon organized by Hedera and AngelHack",
+    year: "2024"
+  },
+  {
+    title: "2nd Place - Campus Party Nordeste Hackathon",
+    description: "Winner (2nd place) with the project Jaiminho for the Correios Challenge",
+    year: "2024"
+  },
+  {
+    title: "Selected Project - Campus Mobile (Smart Cities category)",
+    description: "Project Recria selected by Claro Brasil",
+    year: "2024"
+  },
+  {
+    title: "1st Place - Hacker Cidadão Hackathon",
+    description: "Winner (1st place) with the project Recria, organized by Emprel and Recife City Hall",
+    year: "2023"
+  },
+  {
+    title: "3rd Place - Campus Party Goiás Hackathon",
+    description: "Winner (3rd place) with the project EduWatch",
+    year: "2023"
+  },
+  {
+    title: "1st Place - Mover Program",
+    description: "Winner (1st place) in the UFPE Information Technology Center Program",
+    year: "2019"
+  }
+];
+
+---
+
+<div class="container">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#talks">Talks</a>
+    <a href="#achievements">Achievements</a>
+  </nav>
+
+  <main>
+    <section id="about" class="section profile">
+      <div class="profile-content">
+        <h1>Luis Vinicius Lauriano de França</h1>
+        <p class="role">Research and Data Engineer</p>
+        <p class="email">lvlf@cin.ufpe.br</p>
+        <p class="bio">
+          My research focuses on developing fairness strategies for supervised machine learning models. 
+          I explore how ethical principles and social justice can be integrated into the evaluation and 
+          deployment of machine learning models. My work aims to identify, measure, and mitigate biases 
+          to promote more equitable outcomes. I am also interested in developing methods to detect 
+          discrimination and assess fairness in facial recognition systems. My research interests include 
+          ethics, justice, and the social impact of machine learning and artificial intelligence.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      {experiences.map(exp => (
+        <div class="experience-item">
+          <h3>{exp.company} - {exp.role}</h3>
+          <p class="period">{exp.period}</p>
+          <p class="description">{exp.description}</p>
+        </div>
+      ))}
+    </section>
+
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+      {publications.map(pub => (
+        <div class="publication-item">
+          <h3>{pub.title}</h3>
+          <p>{pub.conference}</p>
+        </div>
+      ))}
+    </section>
+
+   <section id="projects" class="section">
+  <h2>Projects</h2>
+
+  <div class="project-item">
+   
+  
+
+  <div class="project-item">
+    <h3>World Cup 2022 Outcome Prediction</h3>
+    <p>
+      Machine learning project to predict outcomes of 2022 World Cup matches using historical data, built for study and exploration of model performance in tournament-style events.
+    </p>
+  </div>
+
+  <div class="project-item">
+    <h3>League of Legends Match Prediction</h3>
+    <p>
+      End-to-end ML project predicting match results based on the blue side advantage. Included data collection, preprocessing, dimensionality reduction, and models using XGBoost and logistic regression via PyCaret.
+    </p>
+  </div>
+
+  <div class="project-item">
+    <h3>Covid-19 Early Case Analysis</h3>
+    <p>
+      Data analysis project tracking global Covid-19 trends from January to March 2020, identifying early warning signs of rising death rates in countries like the US before the peak of the outbreak.
+    </p>
+  </div>
+</section>
+
+
+    <section id="talks" class="section">
+      <h2>Talks</h2>
+      {talks.map(talk => (
+        <div class="talk-item">
+          <h3>{talk.title}</h3>
+          <p class="event">{talk.event}</p>
+          <p class="date">{talk.date}</p>
+        </div>
+      ))}
+    </section>
+
+    <section id="achievements" class="section">
+      <h2>Achievements in Innovation and Technology Competitions</h2>
+      {achievements.map(achievement => (
+        <div class="achievement-item">
+          <h3>{achievement.title}</h3>
+          <p class="year">{achievement.year}</p>
+          <p class="description">{achievement.description}</p>
+        </div>
+      ))}
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Luis Vinicius Lauriano de França</p>
+  </footer>
+</div>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+  }
+
+  nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #000;
+  }
+
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .profile {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-content {
+    text-align: center;
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .role {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+
+  .email {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .experience-item, .publication-item, .project-item, .talk-item, .achievement-item {
+    margin-bottom: 2rem;
+  }
+
+  .period, .date, .year {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+  }
+
+  .description {
+    margin-top: 0.5rem;
+  }
+
+  .event {
+    color: #666;
+    font-style: italic;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    nav {
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .bio {
+      font-size: 1rem;
+    }
+
+    .profile {
+      min-height: auto;
+      padding: 4rem 0;
+    }
+  }
+</style>
